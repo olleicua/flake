@@ -1,6 +1,6 @@
 # learn sentence structure
 PARTS_OF_SPEECH = %w~ adjectives nouns adverbs verbs prepositions ~
-FORM = %w~ adjectives nouns adverbs verbs prepositions adjectives nouns ~
+LITERARY_FORM = %w~ adjectives nouns adverbs verbs prepositions adjectives nouns ~
 class String
   def to_sentence
     "#{self[0].upcase}#{self[1..-1]}."
@@ -19,4 +19,4 @@ puts "Sometimes when I feel like just another cog in the machine "\
      "feel like a unique snowflake.\n\n"
 
 # change the state of the universe
-puts FORM.map { |x| WORDS[x].sample }.join(' ').to_sentence
+puts LITERARY_FORM.map { |x| WORDS[x].sample }.join(' ').to_sentence
