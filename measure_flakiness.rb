@@ -14,12 +14,12 @@ class Integer
 end
 
 PARTS_OF_SPEECH = %w~ adjectives nouns adverbs verbs prepositions ~
-FORM = %w~ adjectives nouns adverbs verbs prepositions adjectives nouns ~
+LITERARY_FORM = %w~ adjectives nouns adverbs verbs prepositions adjectives nouns ~
 WORDS = {}
 PARTS_OF_SPEECH.each do |x|
   WORDS[x] = open("#{File.dirname(__FILE__)}/#{x}").map(&:chomp)
 end
-print FORM.map { |x| "#{WORDS[x].size} #{x}" }.join(' * ')
+print LITERARY_FORM.map { |x| "#{WORDS[x].size} #{x}" }.join(' * ')
 print ' = '
-print FORM.map { |x| WORDS[x].size }.inject { |a, b| a * b }.humanize
+print LITERARY_FORM.map { |x| WORDS[x].size }.inject { |a, b| a * b }.humanize
 puts ' possible sentences'
